@@ -1,0 +1,2300 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Petani Juara — SawitPRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-950: #06351f;
+        --green-900: #064832;
+        --green-800: #075f35;
+        --green-700: #007200;
+        --green-600: #08764c;
+        --green-200: #cfe6d3;
+        --green-100: #e7f4e9;
+        --green-50: #f3f8f3;
+        --yellow: #fed300;
+        --yellow-dark: #d8af05;
+        --yellow-soft: #fff8d8;
+        --ink: #143d2d;
+        --text: #33493d;
+        --muted: #637568;
+        --line: #dfe8db;
+        --white: #fff;
+        --danger: #b4372a;
+        --shadow-sm: 0 10px 30px rgba(6, 72, 50, 0.08);
+        --shadow-lg: 0 24px 70px rgba(6, 72, 50, 0.16);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--text);
+        background: var(--white);
+        font-family: "Inter", Arial, sans-serif;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body,
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      img,
+      svg,
+      iframe,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      a,
+      input,
+      select {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      select:focus-visible {
+        outline: 3px solid rgba(254, 211, 0, 0.7);
+        outline-offset: 3px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--ink);
+        letter-spacing: -0.035em;
+      }
+
+      h1 {
+        margin-bottom: 24px;
+        color: var(--white);
+        font-size: clamp(42px, 5.2vw, 72px);
+        font-weight: 900;
+        line-height: 1.06;
+      }
+
+      h2 {
+        margin-bottom: 14px;
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 800;
+        line-height: 1.16;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 21px;
+        font-weight: 750;
+        line-height: 1.32;
+      }
+
+      .page {
+        width: 100%;
+        overflow: clip;
+      }
+
+      .wrap {
+        width: min(1180px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .section-soft {
+        background: var(--green-50);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 12px;
+        color: var(--green-700);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        line-height: 1.4;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 26px;
+        height: 3px;
+        border-radius: 999px;
+        background: var(--yellow);
+        content: "";
+      }
+
+      .section-head {
+        width: min(740px, 100%);
+        margin: 0 auto 46px;
+        text-align: center;
+      }
+
+      .section-head .eyebrow {
+        justify-content: center;
+      }
+
+      .section-head > p:last-child {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 24px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 750;
+        line-height: 1.4;
+        text-align: center;
+        text-decoration: none;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-yellow {
+        color: var(--green-950);
+        background: var(--yellow);
+        box-shadow: 0 12px 30px rgba(216, 175, 5, 0.25);
+      }
+
+      .button-yellow:hover {
+        background: #ffe04d;
+      }
+
+      .button-white {
+        color: var(--green-700);
+        background: var(--white);
+      }
+
+      .button-green {
+        color: var(--white);
+        background: var(--green-700);
+      }
+
+      .button-green:hover {
+        background: #005f00;
+        box-shadow: 0 12px 28px rgba(0, 114, 0, 0.2);
+      }
+
+      .button-outline {
+        color: var(--green-700);
+        border-color: var(--green-700);
+        background: var(--white);
+      }
+
+      .button[disabled] {
+        cursor: not-allowed;
+        opacity: 0.65;
+        transform: none;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 760px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 79% 20%, rgba(254, 211, 0, 0.24), transparent 23%),
+          linear-gradient(135deg, var(--green-900), var(--green-700) 58%, #005619);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, transparent 49.8%, rgba(255, 255, 255, 0.06) 50%, transparent 50.2%),
+          linear-gradient(0deg, transparent 49.8%, rgba(255, 255, 255, 0.05) 50%, transparent 50.2%);
+        background-size: 72px 72px;
+        content: "";
+        mask-image: linear-gradient(to right, transparent, black 50%);
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -150px;
+        bottom: -250px;
+        width: 680px;
+        height: 680px;
+        border: 120px solid rgba(254, 211, 0, 0.06);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1.04fr 0.96fr;
+        gap: 42px;
+        padding: 64px 0;
+      }
+
+      .campaign-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 22px;
+        padding: 9px 15px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        color: #e9f4ec;
+        background: rgba(6, 72, 50, 0.5);
+        font-size: 12px;
+        font-weight: 700;
+        backdrop-filter: blur(10px);
+      }
+
+      .campaign-pill::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--yellow);
+        box-shadow: 0 0 0 5px rgba(254, 211, 0, 0.14);
+        content: "";
+      }
+
+      .highlight {
+        color: var(--yellow);
+      }
+
+      .hero-copy > p {
+        max-width: 650px;
+        margin-bottom: 30px;
+        color: #d8eadf;
+        font-size: clamp(17px, 1.7vw, 20px);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .trust-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 22px;
+        color: #e6f3e9;
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .trust-row span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .trust-row i {
+        display: grid;
+        width: 19px;
+        height: 19px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--green-800);
+        background: var(--yellow);
+        font-style: normal;
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .hero-stage {
+        position: relative;
+        min-height: 600px;
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-stage::before {
+        position: absolute;
+        width: min(480px, 92%);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.09);
+        content: "";
+        box-shadow:
+          0 0 0 24px rgba(255, 255, 255, 0.04),
+          0 0 0 52px rgba(255, 255, 255, 0.025);
+      }
+
+      .phone-shot {
+        position: relative;
+        z-index: 2;
+        width: 275px;
+        height: 555px;
+        overflow: hidden;
+        border: 8px solid #10241a;
+        border-radius: 38px;
+        background: var(--white);
+        box-shadow: 0 35px 70px rgba(0, 0, 0, 0.28);
+        transform: rotate(3deg);
+      }
+
+      .phone-shot::before {
+        position: absolute;
+        z-index: 2;
+        top: 8px;
+        left: 50%;
+        width: 78px;
+        height: 18px;
+        border-radius: 999px;
+        background: #10241a;
+        content: "";
+        transform: translateX(-50%);
+      }
+
+      .phone-shot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .floating-card {
+        position: absolute;
+        z-index: 3;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 16px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: var(--shadow-lg);
+        backdrop-filter: blur(10px);
+      }
+
+      .floating-card small {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .floating-card strong {
+        color: var(--green-700);
+        font-size: 18px;
+        font-weight: 850;
+      }
+
+      .floating-card.prize {
+        top: 15%;
+        right: 0;
+      }
+
+      .floating-card.mission {
+        bottom: 15%;
+        left: 0;
+      }
+
+      .floating-card.mission strong {
+        color: var(--ink);
+        font-size: 14px;
+      }
+
+      .stats {
+        position: relative;
+        z-index: 4;
+        margin-top: -1px;
+        padding: 32px 0;
+        color: var(--white);
+        background: var(--green-950);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1.3fr repeat(3, 1fr);
+      }
+
+      .stat {
+        min-height: 86px;
+        display: flex;
+        align-items: center;
+        padding: 6px 28px;
+        border-left: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .stat:first-child {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .stat b {
+        display: block;
+        color: var(--yellow);
+        font-size: clamp(24px, 3vw, 37px);
+        font-weight: 850;
+        line-height: 1.1;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 4px;
+        color: #c9dfd0;
+        font-size: 12px;
+      }
+
+      .stat.lead-stat {
+        gap: 18px;
+      }
+
+      .people-icon {
+        position: relative;
+        width: 58px;
+        height: 58px;
+        flex: none;
+        border-radius: 18px;
+        background: rgba(254, 211, 0, 0.12);
+      }
+
+      .people-icon::before,
+      .people-icon::after {
+        position: absolute;
+        border: 3px solid var(--yellow);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .people-icon::before {
+        top: 11px;
+        left: 21px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .people-icon::after {
+        bottom: 10px;
+        left: 13px;
+        width: 26px;
+        height: 14px;
+        border-bottom: 0;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .cards-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .info-card {
+        position: relative;
+        min-height: 260px;
+        padding: 30px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background: var(--white);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .number {
+        display: grid;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 28px;
+        place-items: center;
+        border-radius: 15px;
+        color: var(--green-700);
+        background: var(--yellow);
+        font-size: 17px;
+        font-weight: 850;
+      }
+
+      .info-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .mission-card {
+        background: var(--white);
+      }
+
+      .mission-label {
+        display: inline-flex;
+        margin-bottom: 22px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        color: var(--green-800);
+        background: var(--yellow-soft);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mission-card::after {
+        position: absolute;
+        right: -36px;
+        bottom: -36px;
+        width: 110px;
+        height: 110px;
+        border: 22px solid var(--green-100);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 28px;
+        color: var(--green-700);
+        font-size: 14px;
+        font-weight: 750;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      .reward-grid {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 64px;
+      }
+
+      .criteria {
+        display: grid;
+        gap: 14px;
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .criteria li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .criteria i {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        flex: none;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--green-700);
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .prize-card {
+        position: relative;
+        min-height: 430px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding: 48px;
+        border-radius: var(--radius-xl);
+        color: var(--white);
+        background:
+          radial-gradient(circle at 90% 8%, rgba(254, 211, 0, 0.22), transparent 28%),
+          linear-gradient(145deg, var(--green-900), var(--green-700));
+        box-shadow: var(--shadow-lg);
+      }
+
+      .prize-card::after {
+        position: absolute;
+        right: -95px;
+        bottom: -80px;
+        width: 300px;
+        height: 215px;
+        background: url("assets/46406.png") center / contain no-repeat;
+        content: "";
+        opacity: 0.2;
+      }
+
+      .prize-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .prize-card > span {
+        color: #cfe3d5;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .prize-amount {
+        margin: 8px 0 26px;
+        color: var(--yellow);
+        font-size: clamp(46px, 7vw, 68px);
+        font-weight: 900;
+        letter-spacing: -0.055em;
+        line-height: 1;
+      }
+
+      .prize-details {
+        display: grid;
+        gap: 13px;
+        margin: 0;
+        padding-top: 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .prize-details div {
+        display: grid;
+        grid-template-columns: 115px 1fr;
+        gap: 14px;
+        font-size: 13px;
+      }
+
+      .prize-details dt {
+        color: var(--yellow);
+        font-weight: 750;
+      }
+
+      .prize-details dd {
+        margin: 0;
+        color: #e4f0e7;
+      }
+
+      .countdown {
+        display: flex;
+        width: min(760px, 100%);
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 0 auto 36px;
+        padding: 22px 26px;
+        border-radius: var(--radius-lg);
+        color: var(--white);
+        background: var(--green-950);
+      }
+
+      .countdown-label {
+        max-width: 260px;
+        color: #cfe3d5;
+        font-size: 13px;
+      }
+
+      .countdown-units {
+        display: flex;
+        gap: 9px;
+      }
+
+      .countdown-unit {
+        min-width: 62px;
+        padding: 8px 10px;
+        border-radius: 13px;
+        background: rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      .countdown-unit b {
+        display: block;
+        color: var(--yellow);
+        font-size: 23px;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.2;
+      }
+
+      .countdown-unit small {
+        color: #cfe3d5;
+        font-size: 10px;
+      }
+
+      .winners,
+      .videos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .winner-card,
+      .video-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background: var(--white);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .winner-photo {
+        position: relative;
+        height: 270px;
+        display: grid;
+        place-items: center;
+        color: var(--green-600);
+        background:
+          radial-gradient(circle, rgba(0, 114, 0, 0.08) 2px, transparent 2px) 0 0 / 22px 22px,
+          var(--green-100);
+      }
+
+      .winner-photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .winner-photo svg {
+        width: 66px;
+        fill: none;
+        stroke: var(--green-700);
+        stroke-width: 1.5;
+      }
+
+      .winner-week {
+        position: absolute;
+        z-index: 2;
+        top: 14px;
+        left: 14px;
+        padding: 6px 11px;
+        border-radius: 999px;
+        color: var(--green-950);
+        background: var(--yellow);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .winner-info {
+        padding: 19px 20px 22px;
+      }
+
+      .winner-info b,
+      .video-info b {
+        display: block;
+        color: var(--ink);
+        font-size: 16px;
+      }
+
+      .winner-info span,
+      .video-info span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .winner-info em {
+        display: block;
+        margin-top: 7px;
+        color: var(--green-700);
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .video-frame {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at center, rgba(254, 211, 0, 0.13), transparent 26%),
+          var(--green-950);
+      }
+
+      .video-frame img,
+      .video-frame iframe,
+      .video-frame video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        object-fit: cover;
+      }
+
+      .play-button {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        border: 0;
+        cursor: pointer;
+        background: transparent;
+      }
+
+      .play-button i {
+        display: grid;
+        width: 68px;
+        height: 68px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--green-950);
+        background: var(--yellow);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        font-style: normal;
+        font-size: 22px;
+        transition: transform 180ms ease;
+      }
+
+      .play-button:hover i {
+        transform: scale(1.08);
+      }
+
+      .play-button:disabled {
+        cursor: default;
+      }
+
+      .play-button:disabled i {
+        opacity: 0.6;
+      }
+
+      .video-info {
+        padding: 18px 20px 22px;
+      }
+
+      .signup-grid {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 64px;
+      }
+
+      .signup-copy {
+        position: sticky;
+        top: 30px;
+      }
+
+      .signup-copy > p {
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .form-card {
+        padding: 36px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        background: var(--white);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .form-card h3 {
+        margin-bottom: 26px;
+        font-size: 24px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 14px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        height: 52px;
+        padding: 0 15px;
+        border: 1.5px solid #b9cfbd;
+        border-radius: 12px;
+        color: var(--ink);
+        background: var(--white);
+        font-size: 15px;
+      }
+
+      input[aria-invalid="true"],
+      select[aria-invalid="true"] {
+        border-color: var(--danger);
+        background: #fff8f7;
+      }
+
+      .error {
+        min-height: 0;
+        color: var(--danger);
+        font-size: 12px;
+      }
+
+      .agreement {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 11px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .agreement input {
+        width: 21px;
+        height: 21px;
+        margin: 2px 0 0;
+        accent-color: var(--green-700);
+      }
+
+      .agreement label {
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .form-submit {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .form-note {
+        margin: 11px 0 0;
+        color: var(--muted);
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .form-message {
+        display: none;
+        margin-top: 16px;
+        padding: 13px 15px;
+        border-radius: 12px;
+        color: #8c2a20;
+        background: #fdecea;
+        font-size: 13px;
+      }
+
+      .form-message.show {
+        display: block;
+      }
+
+      .success {
+        display: none;
+        min-height: 410px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .success.show {
+        display: flex;
+      }
+
+      .success-icon {
+        display: grid;
+        width: 72px;
+        height: 72px;
+        margin-bottom: 18px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--green-700);
+        font-size: 30px;
+        font-weight: 900;
+      }
+
+      .success p {
+        max-width: 450px;
+        color: var(--muted);
+      }
+
+      .honeypot {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .terms-grid,
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 0.36fr 0.64fr;
+        gap: 70px;
+      }
+
+      .terms-list {
+        margin: 0;
+        padding: 8px 28px;
+        border-radius: var(--radius-lg);
+        background: var(--green-50);
+        list-style: none;
+      }
+
+      .terms-list li {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 13px;
+        padding: 17px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+      }
+
+      .terms-list li:last-child {
+        border-bottom: 0;
+      }
+
+      .terms-list i {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--green-700);
+        font-style: normal;
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .faq-list {
+        border-top: 1px solid var(--line);
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .faq-question {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 28px;
+        gap: 18px;
+        padding: 22px 0;
+        border: 0;
+        color: var(--ink);
+        background: transparent;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.45;
+        text-align: left;
+      }
+
+      .faq-icon {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--green-100);
+      }
+
+      .faq-icon::before,
+      .faq-icon::after {
+        position: absolute;
+        top: 13px;
+        left: 8px;
+        width: 12px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--green-700);
+        content: "";
+        transition: transform 180ms ease;
+      }
+
+      .faq-icon::after {
+        transform: rotate(90deg);
+      }
+
+      .faq-question[aria-expanded="true"] .faq-icon::after {
+        transform: rotate(0);
+      }
+
+      .faq-answer {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 220ms ease;
+      }
+
+      .faq-answer > div {
+        overflow: hidden;
+      }
+
+      .faq-answer p {
+        margin: 0;
+        padding: 0 46px 22px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .faq-item.open .faq-answer {
+        grid-template-rows: 1fr;
+      }
+
+      .closing {
+        padding: 30px 0 80px;
+      }
+
+      .closing-panel {
+        position: relative;
+        display: grid;
+        min-height: 300px;
+        align-items: center;
+        grid-template-columns: 1fr auto;
+        gap: 36px;
+        overflow: hidden;
+        padding: 52px 58px;
+        border-radius: var(--radius-xl);
+        color: var(--white);
+        background:
+          radial-gradient(circle at 90% 0, rgba(254, 211, 0, 0.22), transparent 30%),
+          linear-gradient(135deg, var(--green-900), var(--green-700));
+      }
+
+      .closing-panel::after {
+        position: absolute;
+        right: -80px;
+        bottom: -180px;
+        width: 390px;
+        height: 390px;
+        border: 80px solid rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .closing-panel > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .closing h2 {
+        color: var(--white);
+      }
+
+      .closing p {
+        margin-bottom: 0;
+        color: #d8eadf;
+      }
+
+      .rv {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 600ms ease,
+          transform 600ms ease;
+      }
+
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (max-width: 960px) {
+        .section {
+          padding: 72px 0;
+        }
+
+        .hero-grid,
+        .reward-grid,
+        .signup-grid,
+        .terms-grid,
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid {
+          padding-bottom: 20px;
+          text-align: center;
+        }
+
+        .campaign-pill {
+          justify-content: center;
+        }
+
+        .hero-copy > p {
+          margin-inline: auto;
+        }
+
+        .hero-actions,
+        .trust-row {
+          justify-content: center;
+        }
+
+        .hero-stage {
+          min-height: 590px;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stat {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .stat:nth-child(odd) {
+          border-left: 0;
+        }
+
+        .stat:nth-child(3),
+        .stat:nth-child(4) {
+          border-bottom: 0;
+        }
+
+        .cards-3,
+        .winners,
+        .videos {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .cards-3 > :last-child,
+        .winners > :last-child,
+        .videos > :last-child {
+          grid-column: 1 / -1;
+          width: calc(50% - 11px);
+          justify-self: center;
+        }
+
+        .signup-copy {
+          position: static;
+        }
+
+        .terms-grid,
+        .faq-grid {
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .wrap {
+          width: min(100% - 32px, 520px);
+        }
+
+        .section {
+          padding: 56px 0;
+        }
+
+        h1 {
+          font-size: 39px;
+        }
+
+        h2 {
+          font-size: 30px;
+        }
+
+        .section-head {
+          margin-bottom: 30px;
+        }
+
+        .section-head > p:last-child {
+          font-size: 15px;
+        }
+
+        .hero-grid {
+          gap: 12px;
+          padding: 42px 0 0;
+        }
+
+        .hero-copy > p {
+          font-size: 16px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .hero-actions .button {
+          width: 100%;
+        }
+
+        .hero-stage {
+          min-height: 510px;
+        }
+
+        .phone-shot {
+          width: 225px;
+          height: 455px;
+          border-width: 6px;
+          border-radius: 32px;
+        }
+
+        .floating-card {
+          padding: 10px 12px;
+        }
+
+        .floating-card.prize {
+          top: 14%;
+          right: -4px;
+        }
+
+        .floating-card.mission {
+          bottom: 13%;
+          left: -5px;
+        }
+
+        .stats {
+          padding: 18px 0;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .stat {
+          min-height: 95px;
+          padding: 12px;
+        }
+
+        .stat:first-child {
+          padding-left: 12px;
+        }
+
+        .people-icon {
+          display: none;
+        }
+
+        .stat b {
+          font-size: 23px;
+        }
+
+        .stat span {
+          font-size: 10px;
+        }
+
+        .cards-3,
+        .winners,
+        .videos {
+          grid-template-columns: 1fr;
+        }
+
+        .cards-3 > :last-child,
+        .winners > :last-child,
+        .videos > :last-child {
+          grid-column: auto;
+          width: 100%;
+        }
+
+        .info-card {
+          min-height: auto;
+          padding: 24px;
+        }
+
+        .reward-grid {
+          gap: 38px;
+        }
+
+        .prize-card {
+          min-height: 390px;
+          padding: 34px 25px;
+        }
+
+        .prize-details div {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+
+        .countdown {
+          align-items: stretch;
+          flex-direction: column;
+          padding: 20px 16px;
+          text-align: center;
+        }
+
+        .countdown-label {
+          max-width: none;
+        }
+
+        .countdown-units {
+          justify-content: center;
+        }
+
+        .countdown-unit {
+          min-width: 0;
+          flex: 1;
+          padding-inline: 6px;
+        }
+
+        .winner-photo {
+          height: 255px;
+        }
+
+        .form-card {
+          padding: 25px 20px;
+          border-radius: var(--radius-lg);
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .field.full {
+          grid-column: auto;
+        }
+
+        .terms-list {
+          padding-inline: 20px;
+        }
+
+        .closing {
+          padding-bottom: 56px;
+        }
+
+        .closing-panel {
+          grid-template-columns: 1fr;
+          padding: 36px 24px;
+          text-align: center;
+        }
+
+        .closing-panel .button {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .rv {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero" id="atas">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="campaign-pill">Program SawitPRO · Juni–Desember 2026</span>
+            <h1>Dapatkan <span class="highlight">Rp1 Juta</span> setiap minggu.</h1>
+            <p>
+              Selesaikan tiga misi sederhana di PetaniPRO, ceritakan pengalaman Kawan Sawit, dan
+              jadilah Petani Juara berikutnya.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-yellow" href="#daftar">Daftar gratis sekarang</a>
+              <a class="button button-white" href="#cara">Lihat cara ikut</a>
+            </div>
+            <div class="trust-row">
+              <span><i>✓</i>100% gratis</span>
+              <span><i>✓</i>Tidak perlu banyak followers</span>
+              <span><i>✓</i>Terbuka untuk wilayah Sumatera</span>
+            </div>
+          </div>
+
+          <div class="hero-stage" aria-label="Tampilan aplikasi PetaniPRO dan hadiah program">
+            <div class="phone-shot">
+              <img src="assets/2e5f3.png" alt="Tampilan aplikasi PetaniPRO" />
+            </div>
+            <div class="floating-card prize">
+              <small>Hadiah mingguan</small>
+              <strong>Rp1.000.000</strong>
+            </div>
+            <div class="floating-card mission">
+              <small>Challenge minggu ini</small>
+              <strong>3 misi PetaniPRO</strong>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="stats" aria-label="Ringkasan program Petani Juara">
+        <div class="wrap stats-grid">
+          <div class="stat lead-stat">
+            <span class="people-icon" aria-hidden="true"></span>
+            <div>
+              <b id="participants">1.500+</b>
+              <span>Kawan Sawit sudah bergabung</span>
+            </div>
+          </div>
+          <div class="stat"><div><b>Rp1 Juta</b><span>hadiah setiap minggu</span></div></div>
+          <div class="stat"><div><b>3 Misi</b><span>cukup lewat aplikasi</span></div></div>
+          <div class="stat"><div><b>Setiap Rabu</b><span>pengumuman pemenang</span></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="cara">
+        <div class="wrap">
+          <div class="section-head rv">
+            <p class="eyebrow">Cara mengikuti</p>
+            <h2>Tiga langkah mudah jadi Petani Juara</h2>
+            <p>
+              Selesaikan semua langkah sebelum hari Minggu. Challenge baru akan hadir setiap awal
+              minggu.
+            </p>
+          </div>
+          <div class="cards-3">
+            <article class="info-card rv">
+              <span class="number">01</span>
+              <h3>Siapkan PetaniPRO</h3>
+              <p>Unduh aplikasi PetaniPRO dan masuk menggunakan nomor HP aktif Kawan Sawit.</p>
+            </article>
+            <article class="info-card rv">
+              <span class="number">02</span>
+              <h3>Selesaikan challenge</h3>
+              <p>Buka aplikasi dan tuntaskan tiga misi yang tersedia pada minggu berjalan.</p>
+            </article>
+            <article class="info-card rv">
+              <span class="number">03</span>
+              <h3>Bagikan pengalaman</h3>
+              <p>
+                Unggah video ke media sosial, tag <b>@sawitpro.id</b>, lalu gunakan hashtag resmi
+                program.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="misi">
+        <div class="wrap">
+          <div class="section-head rv">
+            <p class="eyebrow">Misi mingguan</p>
+            <h2>Selesaikan tiga misi di PetaniPRO</h2>
+            <p>Kenali fitur yang membantu pengambilan keputusan di kebun Kawan Sawit.</p>
+          </div>
+          <div class="cards-3">
+            <article class="info-card mission-card rv">
+              <span class="mission-label">Misi 01</span>
+              <h3>Cek Hama & Penyakit</h3>
+              <p>Kenali kemungkinan gangguan tanaman dan temukan informasi penanganannya.</p>
+            </article>
+            <article class="info-card mission-card rv">
+              <span class="mission-label">Misi 02</span>
+              <h3>Cek Harga TBS</h3>
+              <p>Pantau harga TBS terbaru agar Kawan Sawit lebih siap menentukan waktu jual.</p>
+            </article>
+            <article class="info-card mission-card rv">
+              <span class="mission-label">Misi 03</span>
+              <h3>Kalkulator Pupuk</h3>
+              <p>Hitung kebutuhan pupuk berdasarkan kondisi dan luas kebun Kawan Sawit.</p>
+            </article>
+          </div>
+          <div style="text-align: center">
+            <a
+              class="text-link"
+              href="https://www.sawitpro.id/post/apa-itu-aplikasi-petanipro-fitur-manfaat-dan-cara-download"
+              target="_blank"
+              rel="noopener"
+            >
+              Pelajari fitur dan cara download PetaniPRO →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="hadiah">
+        <div class="wrap reward-grid">
+          <div class="rv">
+            <p class="eyebrow">Kriteria pemenang</p>
+            <h2>Bukan soal followers terbanyak.</h2>
+            <p style="color: var(--muted)">
+              Setiap minggu, tim SawitPRO memilih peserta terbaik berdasarkan kualitas partisipasi.
+            </p>
+            <ul class="criteria">
+              <li><i>✓</i>Penyelesaian seluruh challenge</li>
+              <li><i>✓</i>Kreativitas dan kejelasan konten</li>
+              <li><i>✓</i>Pengalaman nyata yang dibagikan</li>
+              <li><i>✓</i>Interaksi unggahan yang organik</li>
+            </ul>
+          </div>
+          <div class="prize-card rv">
+            <span>Hadiah setiap pemenang mingguan</span>
+            <div class="prize-amount">Rp1.000.000</div>
+            <dl class="prize-details">
+              <div><dt>Pengumuman</dt><dd>Setiap Rabu melalui kanal resmi SawitPRO</dd></div>
+              <div><dt>Pengiriman</dt><dd>Top up e-money pada setiap akhir bulan</dd></div>
+              <div><dt>Periode</dt><dd>Juni–Desember 2026</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="pemenang">
+        <div class="wrap">
+          <div class="section-head rv">
+            <p class="eyebrow">Petani Juara</p>
+            <h2>Kenalan dengan para pemenang</h2>
+            <p>Mereka sudah membuktikan. Giliran Kawan Sawit berikutnya.</p>
+          </div>
+          <div class="countdown rv" id="countdownBox">
+            <div class="countdown-label" id="countdownLabel">
+              Challenge minggu ini ditutup hari Minggu pukul 23.59 WIB
+            </div>
+            <div class="countdown-units">
+              <div class="countdown-unit"><b id="days">0</b><small>hari</small></div>
+              <div class="countdown-unit"><b id="hours">00</b><small>jam</small></div>
+              <div class="countdown-unit"><b id="minutes">00</b><small>menit</small></div>
+              <div class="countdown-unit"><b id="seconds">00</b><small>detik</small></div>
+            </div>
+          </div>
+          <div class="winners" id="winners"></div>
+        </div>
+      </section>
+
+      <section class="section" id="video">
+        <div class="wrap">
+          <div class="section-head rv">
+            <p class="eyebrow">Cerita peserta</p>
+            <h2>Pengalaman mereka memakai PetaniPRO</h2>
+          </div>
+          <div class="videos" id="videos"></div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="daftar">
+        <div class="wrap signup-grid">
+          <div class="signup-copy rv">
+            <p class="eyebrow">Pendaftaran</p>
+            <h2>Siap jadi Petani Juara?</h2>
+            <p>
+              Daftarkan diri sekarang dan mulai challenge pertama minggu ini. Gratis, tanpa biaya
+              pendaftaran.
+            </p>
+            <ul class="criteria">
+              <li><i>✓</i>Panduan dikirim tim SawitPRO</li>
+              <li><i>✓</i>Bisa ikut setiap minggu</li>
+              <li><i>✓</i>Tidak perlu banyak followers</li>
+            </ul>
+            <a class="text-link" id="waDirect" href="#" target="_blank" rel="noopener">
+              Daftar langsung melalui WhatsApp →
+            </a>
+          </div>
+
+          <div class="form-card rv">
+            <form id="registrationForm" novalidate>
+              <div id="formArea">
+                <h3>Form pendaftaran Petani Juara</h3>
+                <div class="form-grid">
+                  <div class="field full">
+                    <label for="nama">Nama lengkap</label>
+                    <input id="nama" name="nama" type="text" autocomplete="name" placeholder="Sesuai KTP" />
+                    <span class="error" id="error-nama"></span>
+                  </div>
+                  <div class="field">
+                    <label for="wa">Nomor WhatsApp</label>
+                    <input id="wa" name="wa" type="tel" inputmode="tel" placeholder="08xxxxxxxxxx" />
+                    <span class="error" id="error-wa"></span>
+                  </div>
+                  <div class="field">
+                    <label for="akun">Nomor akun PetaniPRO</label>
+                    <input id="akun" name="akun" type="tel" inputmode="tel" placeholder="Nomor untuk login" />
+                    <span class="error" id="error-akun"></span>
+                  </div>
+                  <div class="field">
+                    <label for="provinsi">Provinsi</label>
+                    <select id="provinsi" name="provinsi">
+                      <option value="">Pilih provinsi</option>
+                      <option>Aceh</option>
+                      <option>Sumatera Utara</option>
+                      <option>Sumatera Barat</option>
+                      <option>Riau</option>
+                      <option>Kepulauan Riau</option>
+                      <option>Jambi</option>
+                      <option>Sumatera Selatan</option>
+                      <option>Bengkulu</option>
+                      <option>Lampung</option>
+                      <option>Kep. Bangka Belitung</option>
+                    </select>
+                    <span class="error" id="error-provinsi"></span>
+                  </div>
+                  <div class="field">
+                    <label for="kabupaten">Kabupaten / Kota</label>
+                    <input id="kabupaten" name="kabupaten" type="text" placeholder="Contoh: Kampar" />
+                    <span class="error" id="error-kabupaten"></span>
+                  </div>
+                  <div class="field full">
+                    <label for="sosmed">Username TikTok / Instagram / Facebook</label>
+                    <input id="sosmed" name="sosmed" type="text" placeholder="@username" />
+                    <span class="error" id="error-sosmed"></span>
+                  </div>
+                </div>
+                <div class="honeypot" aria-hidden="true">
+                  <label>Website <input id="website" name="website" type="text" tabindex="-1" /></label>
+                </div>
+                <div class="agreement">
+                  <input id="setuju" name="setuju" type="checkbox" />
+                  <label for="setuju">
+                    Saya sudah membaca dan menyetujui
+                    <a href="#syarat">Syarat &amp; Ketentuan</a> program.
+                  </label>
+                </div>
+                <span class="error" id="error-setuju"></span>
+                <div class="form-message" id="formMessage" role="alert"></div>
+                <button class="button button-green form-submit" id="submitButton" type="submit">
+                  Daftar gratis sekarang
+                </button>
+                <p class="form-note">
+                  Data hanya digunakan untuk pelaksanaan program Petani Juara.
+                </p>
+              </div>
+
+              <div class="success" id="success" role="status">
+                <span class="success-icon">✓</span>
+                <h3>Data sudah siap dikirim</h3>
+                <p>
+                  Terima kasih, <strong id="successName"></strong>. Selesaikan pendaftaran melalui
+                  WhatsApp agar tim SawitPRO dapat menghubungi Kawan Sawit.
+                </p>
+                <a class="button button-yellow" id="waConfirm" href="#" target="_blank" rel="noopener">
+                  Kirim melalui WhatsApp
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="syarat">
+        <div class="wrap terms-grid">
+          <div class="rv">
+            <p class="eyebrow">Ketentuan</p>
+            <h2>Syarat dan ketentuan</h2>
+            <p style="color: var(--muted)">
+              Berikut ringkasan utama program. Baca versi lengkap sebelum mendaftar.
+            </p>
+            <a class="button button-outline" id="termsLink" href="#" target="_blank" rel="noopener">
+              Baca ketentuan lengkap
+            </a>
+          </div>
+          <ol class="terms-list rv">
+            <li><i>1</i><span>Program berlangsung Juni–Desember 2026 dan tidak dipungut biaya.</span></li>
+            <li><i>2</i><span>Terbuka bagi pengguna PetaniPRO di wilayah Sumatera.</span></li>
+            <li><i>3</i><span>Peserta wajib menyelesaikan challenge dan mengunggah video pengalaman.</span></li>
+            <li><i>4</i><span>Video wajib menandai @sawitpro.id serta hashtag resmi program.</span></li>
+            <li><i>5</i><span>Keputusan tim SawitPRO dalam pemilihan pemenang bersifat final.</span></li>
+            <li><i>6</i><span>Pajak hadiah ditanggung oleh pemenang.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="faq">
+        <div class="wrap faq-grid">
+          <div class="rv">
+            <p class="eyebrow">Tanya jawab</p>
+            <h2>Masih punya pertanyaan?</h2>
+            <p style="color: var(--muted)">
+              Temukan jawaban singkat seputar pendaftaran dan pelaksanaan challenge.
+            </p>
+          </div>
+          <div class="faq-list" id="faqList"></div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="wrap">
+          <div class="closing-panel">
+            <div>
+              <h2>Jangan lewatkan Rp1 juta setiap minggu.</h2>
+              <p>Selesaikan challenge, bagikan pengalaman, dan jadilah Petani Juara.</p>
+            </div>
+            <a class="button button-yellow" href="#daftar">Daftar gratis sekarang</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      var CONFIG = {
+        PARTICIPANTS: 1500,
+        PARTICIPANTS_SUFFIX: "+",
+        WA_NUMBER: "6285171604102",
+        TERMS_URL: "https://www.sawitpro.id/syarat-dan-ketentuan-petani-juara",
+        PROGRAM_END: "2026-12-31T23:59:59+07:00",
+        ENDPOINT_URL: "",
+        USE_VELO: false,
+        VELO_TIMEOUT_MS: 8000,
+      };
+
+      var WINNERS = [
+        { name: "Nama Pemenang", place: "Kabupaten, Provinsi", week: "Minggu 01", photo: "" },
+        { name: "Nama Pemenang", place: "Kabupaten, Provinsi", week: "Minggu 02", photo: "" },
+        { name: "Nama Pemenang", place: "Kabupaten, Provinsi", week: "Minggu 03", photo: "" },
+      ];
+
+      var VIDEOS = [
+        { type: "", title: "Cerita Petani Juara", meta: "Video segera hadir" },
+        { type: "", title: "Pengalaman memakai PetaniPRO", meta: "Video segera hadir" },
+        { type: "", title: "Challenge minggu ini", meta: "Video segera hadir" },
+      ];
+
+      var FAQS = [
+        {
+          q: "Apakah program ini berbayar?",
+          a: "Tidak. Pendaftaran dan partisipasi program Petani Juara sepenuhnya gratis.",
+        },
+        {
+          q: "Siapa saja yang bisa ikut?",
+          a: "Pengguna aktif PetaniPRO yang berdomisili atau memiliki kebun di wilayah Sumatera.",
+        },
+        {
+          q: "Apakah harus punya banyak followers?",
+          a: "Tidak. Kualitas pengalaman, kreativitas, dan penyelesaian challenge tetap menjadi pertimbangan utama.",
+        },
+        {
+          q: "Bagaimana mendapat panduan challenge?",
+          a: "Setelah mendaftar, Kawan Sawit akan memperoleh informasi dan panduan dari tim SawitPRO.",
+        },
+        {
+          q: "Bisa ikut setiap minggu?",
+          a: "Bisa. Challenge baru hadir setiap minggu selama periode program berlangsung.",
+        },
+        {
+          q: "Kapan pemenang diumumkan?",
+          a: "Pemenang diumumkan setiap hari Rabu melalui kanal resmi SawitPRO.",
+        },
+      ];
+
+      (function () {
+        "use strict";
+
+        var $ = function (selector, root) {
+          return (root || document).querySelector(selector);
+        };
+        var escapeHtml = function (value) {
+          var div = document.createElement("div");
+          div.textContent = value == null ? "" : value;
+          return div.innerHTML;
+        };
+        var safeUrl = function (url) {
+          return /^https?:\/\//i.test(url || "") ? url : "";
+        };
+        var waBase = "https://wa.me/" + CONFIG.WA_NUMBER;
+
+        $("#waDirect").href =
+          waBase +
+          "?text=" +
+          encodeURIComponent("Halo SawitPRO, saya ingin mendaftar program Petani Juara.");
+        $("#termsLink").href = CONFIG.TERMS_URL;
+
+        document.addEventListener("click", function (event) {
+          var link = event.target.closest('a[href^="#"]');
+          if (!link) return;
+          var target = document.querySelector(link.getAttribute("href"));
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+
+        var revealItems = document.querySelectorAll(".rv");
+        if ("IntersectionObserver" in window) {
+          var revealObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in");
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1 },
+          );
+          revealItems.forEach(function (item) {
+            revealObserver.observe(item);
+          });
+        } else {
+          revealItems.forEach(function (item) {
+            item.classList.add("in");
+          });
+        }
+        setTimeout(function () {
+          revealItems.forEach(function (item) {
+            item.classList.add("in");
+          });
+        }, 2000);
+
+        var participant = $("#participants");
+        var targetParticipants = CONFIG.PARTICIPANTS;
+        var startTime = null;
+        function animateCounter(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / 1400, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          participant.textContent =
+            Math.round(targetParticipants * eased).toLocaleString("id-ID") +
+            (progress === 1 ? CONFIG.PARTICIPANTS_SUFFIX : "");
+          if (progress < 1) requestAnimationFrame(animateCounter);
+        }
+        requestAnimationFrame(animateCounter);
+
+        function endOfWeek() {
+          var wibOffset = 7 * 60 * 60 * 1000;
+          var now = new Date(Date.now() + wibOffset);
+          var daysToSunday = (7 - now.getUTCDay()) % 7;
+          return (
+            Date.UTC(
+              now.getUTCFullYear(),
+              now.getUTCMonth(),
+              now.getUTCDate() + daysToSunday,
+              23,
+              59,
+              59,
+            ) - wibOffset
+          );
+        }
+
+        function updateCountdown() {
+          if (Date.now() > new Date(CONFIG.PROGRAM_END).getTime()) {
+            $("#countdownLabel").textContent =
+              "Program Petani Juara 2026 telah berakhir. Terima kasih sudah berpartisipasi.";
+            $(".countdown-units").style.display = "none";
+            return;
+          }
+          var remaining = Math.max(0, endOfWeek() - Date.now());
+          var seconds = Math.floor(remaining / 1000);
+          $("#days").textContent = Math.floor(seconds / 86400);
+          $("#hours").textContent = String(Math.floor((seconds % 86400) / 3600)).padStart(2, "0");
+          $("#minutes").textContent = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+          $("#seconds").textContent = String(seconds % 60).padStart(2, "0");
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        var userIcon =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>';
+        $("#winners").innerHTML = WINNERS.map(function (winner) {
+          var photo = safeUrl(winner.photo);
+          return (
+            '<article class="winner-card rv in">' +
+            '<div class="winner-photo"><span class="winner-week">' +
+            escapeHtml(winner.week) +
+            "</span>" +
+            (photo
+              ? '<img src="' +
+                escapeHtml(photo) +
+                '" alt="Foto ' +
+                escapeHtml(winner.name) +
+                '" loading="lazy">'
+              : userIcon) +
+            '</div><div class="winner-info"><b>' +
+            escapeHtml(winner.name) +
+            "</b><span>" +
+            escapeHtml(winner.place) +
+            "</span><em>Hadiah Rp1.000.000</em></div></article>"
+          );
+        }).join("");
+
+        function videoSource(video) {
+          if (video.type === "youtube" && /^[\w-]{6,20}$/.test(video.id || "")) {
+            return "https://www.youtube.com/embed/" + video.id + "?autoplay=1&rel=0";
+          }
+          if (video.type === "embed" || video.type === "mp4") return safeUrl(video.url);
+          return "";
+        }
+
+        $("#videos").innerHTML = VIDEOS.map(function (video, index) {
+          var source = videoSource(video);
+          return (
+            '<article class="video-card rv in"><div class="video-frame" data-index="' +
+            index +
+            '"><button class="play-button" type="button" ' +
+            (source ? "" : "disabled") +
+            ' aria-label="Putar video"><i>▶</i></button></div>' +
+            '<div class="video-info"><b>' +
+            escapeHtml(video.title) +
+            "</b><span>" +
+            escapeHtml(video.meta) +
+            "</span></div></article>"
+          );
+        }).join("");
+
+        $("#videos").addEventListener("click", function (event) {
+          var button = event.target.closest(".play-button");
+          if (!button || button.disabled) return;
+          var frame = button.parentNode;
+          var video = VIDEOS[Number(frame.getAttribute("data-index"))];
+          var source = videoSource(video);
+          var media;
+          if (video.type === "mp4") {
+            media = document.createElement("video");
+            media.src = source;
+            media.controls = true;
+            media.autoplay = true;
+            media.playsInline = true;
+          } else {
+            media = document.createElement("iframe");
+            media.src = source;
+            media.title = video.title;
+            media.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+            media.allowFullscreen = true;
+          }
+          frame.innerHTML = "";
+          frame.appendChild(media);
+        });
+
+        $("#faqList").innerHTML = FAQS.map(function (faq, index) {
+          return (
+            '<article class="faq-item rv in"><button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-' +
+            index +
+            '"><span>' +
+            escapeHtml(faq.q) +
+            '</span><span class="faq-icon" aria-hidden="true"></span></button>' +
+            '<div class="faq-answer" id="answer-' +
+            index +
+            '"><div><p>' +
+            escapeHtml(faq.a) +
+            "</p></div></div></article>"
+          );
+        }).join("");
+
+        $("#faqList").addEventListener("click", function (event) {
+          var question = event.target.closest(".faq-question");
+          if (!question) return;
+          var item = question.parentNode;
+          var open = item.classList.toggle("open");
+          question.setAttribute("aria-expanded", String(open));
+          notifyHeight();
+        });
+
+        var form = $("#registrationForm");
+        var submitButton = $("#submitButton");
+        var formMessage = $("#formMessage");
+        var phonePattern = /^(?:\+?62|0)8[1-9][0-9]{6,11}$/;
+
+        function normalisePhone(value) {
+          value = String(value || "").replace(/[\s\-().]/g, "");
+          if (value.indexOf("+62") === 0) return "62" + value.slice(3);
+          if (value.charAt(0) === "0") return "62" + value.slice(1);
+          return value;
+        }
+
+        function setError(id, message) {
+          var input = $("#" + id);
+          $("#error-" + id).textContent = message || "";
+          if (message) input.setAttribute("aria-invalid", "true");
+          else input.removeAttribute("aria-invalid");
+        }
+
+        function validateForm() {
+          var valid = true;
+          var firstInvalid = null;
+          function check(id, message) {
+            setError(id, message);
+            if (message) {
+              valid = false;
+              if (!firstInvalid) firstInvalid = $("#" + id);
+            }
+          }
+          check("nama", form.nama.value.trim().length < 3 ? "Masukkan nama lengkap." : "");
+          check(
+            "wa",
+            !phonePattern.test(form.wa.value.replace(/[\s\-().]/g, ""))
+              ? "Masukkan nomor WhatsApp yang benar."
+              : "",
+          );
+          check(
+            "akun",
+            !phonePattern.test(form.akun.value.replace(/[\s\-().]/g, ""))
+              ? "Masukkan nomor akun PetaniPRO."
+              : "",
+          );
+          check("provinsi", !form.provinsi.value ? "Pilih provinsi." : "");
+          check(
+            "kabupaten",
+            form.kabupaten.value.trim().length < 3 ? "Masukkan kabupaten atau kota." : "",
+          );
+          check(
+            "sosmed",
+            form.sosmed.value.trim().length < 3 ? "Masukkan username media sosial." : "",
+          );
+          check("setuju", !form.setuju.checked ? "Persetujuan diperlukan." : "");
+          if (firstInvalid) firstInvalid.focus();
+          return valid;
+        }
+
+        ["nama", "wa", "akun", "provinsi", "kabupaten", "sosmed", "setuju"].forEach(
+          function (id) {
+            var input = $("#" + id);
+            input.addEventListener("input", function () {
+              setError(id, "");
+            });
+            input.addEventListener("change", function () {
+              setError(id, "");
+            });
+          },
+        );
+
+        var veloResolver = null;
+        window.addEventListener("message", function (event) {
+          if (
+            event.data &&
+            event.data.type === "petani-juara-result" &&
+            veloResolver
+          ) {
+            veloResolver(Boolean(event.data.ok));
+            veloResolver = null;
+          }
+        });
+
+        function sendToEndpoint(payload) {
+          return fetch(CONFIG.ENDPOINT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload),
+          });
+        }
+
+        function sendToVelo(payload) {
+          return new Promise(function (resolve, reject) {
+            veloResolver = function (ok) {
+              if (ok) resolve();
+              else reject(new Error("Velo menolak data."));
+            };
+            window.parent.postMessage(
+              { type: "petani-juara-register", payload: payload },
+              "*",
+            );
+            setTimeout(function () {
+              if (veloResolver) {
+                veloResolver = null;
+                reject(new Error("Velo timeout."));
+              }
+            }, CONFIG.VELO_TIMEOUT_MS);
+          });
+        }
+
+        function showSuccess(payload) {
+          $("#formArea").style.display = "none";
+          $("#successName").textContent = payload.nama;
+          $("#waConfirm").href =
+            waBase +
+            "?text=" +
+            encodeURIComponent(
+              "Halo SawitPRO, saya " +
+                payload.nama +
+                " (" +
+                payload.kabupaten +
+                ", " +
+                payload.provinsi +
+                ") ingin mendaftar Petani Juara. Nomor akun PetaniPRO: " +
+                payload.akun +
+                ". Media sosial: " +
+                payload.sosmed,
+            );
+          $("#success").classList.add("show");
+          notifyHeight();
+        }
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          formMessage.classList.remove("show");
+          if (form.website.value || !validateForm()) return;
+
+          var payload = {
+            waktu: new Date().toISOString(),
+            nama: form.nama.value.trim(),
+            wa: normalisePhone(form.wa.value),
+            akun: normalisePhone(form.akun.value),
+            provinsi: form.provinsi.value,
+            kabupaten: form.kabupaten.value.trim(),
+            sosmed: form.sosmed.value.trim(),
+            sumber: "landing-petani-juara",
+          };
+
+          var jobs = [];
+          if (CONFIG.ENDPOINT_URL) jobs.push(sendToEndpoint(payload));
+          if (CONFIG.USE_VELO) jobs.push(sendToVelo(payload));
+
+          if (!jobs.length) {
+            showSuccess(payload);
+            return;
+          }
+
+          submitButton.disabled = true;
+          submitButton.textContent = "Mengirim…";
+          Promise.all(jobs)
+            .then(function () {
+              showSuccess(payload);
+            })
+            .catch(function () {
+              submitButton.disabled = false;
+              submitButton.textContent = "Daftar gratis sekarang";
+              formMessage.textContent =
+                "Pendaftaran belum terkirim. Silakan coba lagi atau gunakan pendaftaran WhatsApp.";
+              formMessage.classList.add("show");
+            });
+        });
+
+        function notifyHeight() {
+          var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+          try {
+            window.parent.postMessage(
+              { type: "petani-juara-height", height: height },
+              "*",
+            );
+          } catch (error) {}
+        }
+
+        window.addEventListener("load", notifyHeight);
+        window.addEventListener("resize", notifyHeight);
+        if ("ResizeObserver" in window) new ResizeObserver(notifyHeight).observe(document.body);
+      })();
+    </script>
+  </body>
+</html>
